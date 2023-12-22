@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Banner = () => {
   const { user } = useContext(AuthContext);
   return (
-    <section className="max-h-screen mb-10">
+    <section className=" mb-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-center ">
         <div className="text-left px-10 space-y-3">
           <h1 className="text-2xl font-bold">Task Management</h1>

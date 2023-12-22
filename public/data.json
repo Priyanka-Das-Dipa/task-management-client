@@ -1,0 +1,62 @@
+[
+  {
+    "id": "01",
+    "image": "https://i.ibb.co/wLnMJYq/user-2.jpg",
+    "title": "Software Engineer",
+    "benefits": [
+      "Access to cutting-edge tools",
+      "Opportunities for skill development",
+      "Collaboration with the tech community"
+    ]
+  },
+  {
+    "id": "02",
+    "image": "https://i.ibb.co/1XK47bD/user-3.jpg",
+    "title": "UI/UX Designer",
+    "benefits": [
+      "Creative freedom for innovative designs",
+      "Opportunities for shaping user experiences",
+      "Networking with design professionals"
+    ]
+  },
+  {
+    "id": "03",
+    "image": "https://i.ibb.co/Sr97WKV/user-1.jpg",
+    "title": "Business Analyst",
+    "benefits": [
+      "Analyzing and solving complex business problems",
+      "Opportunities for career advancement",
+      "Collaboration with cross-functional teams"
+    ]
+  },
+  {
+    "id": "04",
+    "image": "https://i.ibb.co/Sr97WKV/user-1.jpg",
+    "title": "Marketing Manager",
+    "benefits": [
+      "Developing and implementing effective marketing strategies",
+      "Data-driven decision-making for campaign optimization",
+      "Building and leading high-performance teams"
+    ]
+  },
+  {
+    "id": "05",
+    "image": "https://i.ibb.co/1XK47bD/user-3.jpg",
+    "title": "Investment Banker",
+    "benefits": [
+      "Managing financial transactions for major clients",
+      "Access to global financial markets and investments",
+      "Working on high-profile mergers and acquisitions"
+    ]
+  },
+  {
+    "id": "06",
+    "image": "https://i.ibb.co/wLnMJYq/user-2.jpg",
+    "title": "Retail Banker",
+    "benefits": [
+      "Assisting customers with their financial needs and goals",
+      "Building strong relationships with clients",
+      "Understanding and promoting a variety of banking products"
+    ]
+  }
+]

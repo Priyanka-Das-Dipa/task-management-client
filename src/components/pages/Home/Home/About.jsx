@@ -3,11 +3,11 @@ const About = () => {
 
   return (
     <>
-      <div id="about">
+      <div id="about mb-10">
         <h2 className="text-4xl font-bold text-center">ABOUT US</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-center">
-          <div className="w-">
+          <div className="h-[580px]">
             <img src={about} alt="" />
           </div>
           <div className="space-y-4 px-5">
