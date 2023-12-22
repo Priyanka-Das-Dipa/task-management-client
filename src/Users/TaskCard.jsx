@@ -1,5 +1,6 @@
 import { IoCreate } from "react-icons/io5";
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 // eslint-disable-next-line react/prop-types
@@ -25,6 +26,7 @@ const TaskCard = ({ data }) => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            // eslint-disable-next-line react/prop-types
             if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
@@ -52,9 +54,12 @@ const TaskCard = ({ data }) => {
             >
               <MdDelete />
             </button>
-            <button className="btn-sm text-2xl text-blue-600">
-              <IoCreate />
-            </button>
+
+            <Link to={`/dashboard/update/${_id}`}>
+              <button className="btn-sm text-2xl text-blue-600">
+                <IoCreate />
+              </button>
+            </Link>
           </div>
         </div>
       </div>

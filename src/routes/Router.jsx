@@ -7,6 +7,7 @@ import Dashboard from "../assets/layout/Dashboard";
 import CreateTask from "../Users/CreateTask";
 import AllTasks from "../Users/AllTasks";
 import ToDo from "../Users/ToDo";
+import UpdateTask from "../Users/UpdateTask";
 
 export const router = createBrowserRouter([
   {
@@ -41,9 +42,16 @@ export const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/createTask')
       },
       {
+        path: "update/:id",
+        element: <UpdateTask></UpdateTask>,
+        loader: ({params}) => fetch(`http://localhost:5000/createTask/${params.id}`)
+      },
+      {
         path: "todo",
         element: <ToDo></ToDo>
-      }
+      },
+      
+
     ],
   },
 ]);
