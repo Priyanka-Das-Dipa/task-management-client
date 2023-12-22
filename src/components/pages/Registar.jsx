@@ -1,6 +1,9 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Registar = () => {
   const {
@@ -8,8 +11,33 @@ const Registar = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || "/";
+
   const onSubmit = (data) => {
     console.log(data);
+    createUser(data.email, data.password).then((result) => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      updateUserProfile(data.name, data.photoURL)
+        .then(() => {
+          console.log("user Profile updated");
+          Swal.fire({
+            position: "top-center",
+            icon: "successfully",
+            title: "You are Sign Up",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        })
+        .catch((error) => console.log(error));
+
+      navigate(from, { replace: true });
+    });
   };
 
   return (
@@ -36,6 +64,20 @@ const Registar = () => {
                   className="input input-bordered"
                 />
                 {errors.name && (
+                  <span className="text-red-500">This field is required</span>
+                )}
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input
+                  type="text"
+                  {...register("photoURL", { required: true })}
+                  placeholder="Photo URL"
+                  className="input input-bordered"
+                />
+                {errors.photoURL && (
                   <span className="text-red-500">This field is required</span>
                 )}
               </div>
@@ -81,7 +123,6 @@ const Registar = () => {
                   className="btn btn-primary"
                   value="SignUp"
                 />
-                {/* <button className="btn btn-primary">Register</button> */}
               </div>
               <p>
                 Have an Account?{" "}
