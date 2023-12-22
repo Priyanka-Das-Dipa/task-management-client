@@ -5,6 +5,8 @@ import Login from "../components/pages/Login";
 import Registar from "../components/pages/Registar";
 import Dashboard from "../assets/layout/Dashboard";
 import CreateTask from "../Users/CreateTask";
+import AllTasks from "../Users/AllTasks";
+import ToDo from "../Users/ToDo";
 
 export const router = createBrowserRouter([
   {
@@ -31,9 +33,17 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "createTask",
-        element: <CreateTask></CreateTask>
+        element: <CreateTask></CreateTask>,
+      },
+      {
+        path: "alltasks",
+        element: <AllTasks></AllTasks>,
+        loader: () => fetch('http://localhost:5000/createTask')
+      },
+      {
+        path: "todo",
+        element: <ToDo></ToDo>
       }
-    ]
-
-  }
+    ],
+  },
 ]);

@@ -42,13 +42,13 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" className="flex items-center gap-2 text-xl">
+            <NavLink to="alltasks" className="flex items-center gap-2 text-xl">
               <FaTasks />
               All Task
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" className="flex items-center gap-2 text-xl">
+            <NavLink to="todo" className="flex items-center gap-2 text-xl">
               <MdAddTask />
               To-Do Task
             </NavLink>
