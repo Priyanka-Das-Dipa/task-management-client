@@ -29,6 +29,11 @@ const Navbar = () => {
           About
         </Link>
       </li>
+      <li>
+        <Link to="/dashboard">
+          Dashboard
+        </Link>
+      </li>
     </>
   );
   return (
@@ -98,17 +103,7 @@ const Navbar = () => {
               SignUp
             </Link>
           )}
-          {/* {user ? (
-            <>
-              <Link to="login" onClick={handleLogOut}>
-                LogOut
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link to="login">Login</Link>
-            </>
-          )} */}
+          
         </div>
       </div>
     </div>

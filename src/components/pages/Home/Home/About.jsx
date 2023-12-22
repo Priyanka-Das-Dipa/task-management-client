@@ -7,7 +7,7 @@ const About = () => {
         <h2 className="text-4xl font-bold text-center">ABOUT US</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-center">
-          <div className="h-[580px]">
+          <div className="w-[550px]">
             <img src={about} alt="" />
           </div>
           <div className="space-y-4 px-5">
@@ -18,9 +18,9 @@ const About = () => {
             <p className="">
               Welcome to
               <span className="text-blue-500 font-bold">
-                {" "}
+               
                 Task Management System
-              </span>{" "}
+              </span>
               where efficiency meets simplicity. Our mission is to empower
               individuals and teams to seamlessly organize, prioritize, and
               accomplish tasks with ease. From user-friendly interfaces to
