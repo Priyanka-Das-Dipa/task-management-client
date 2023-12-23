@@ -6,7 +6,7 @@ import Registar from "../components/pages/Registar";
 import Dashboard from "../assets/layout/Dashboard";
 import CreateTask from "../Users/CreateTask";
 import AllTasks from "../Users/AllTasks";
-import ToDo from "../Users/ToDo";
+
 import UpdateTask from "../Users/UpdateTask";
 import PrivateRoute from "./PrivateRoute";
 
@@ -47,10 +47,10 @@ export const router = createBrowserRouter([
         element: <UpdateTask></UpdateTask>,
         loader: ({params}) => fetch(`http://localhost:5000/createTask/${params.id}`)
       },
-      {
-        path: "todo",
-        element: <ToDo></ToDo>
-      },
+      // {
+      //   path: "todo",
+      //   element: <ToDo></ToDo>
+      // },
       
 
     ],
