@@ -34,18 +34,18 @@ export const router = createBrowserRouter([
     element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
-        path: "createTask",
+        path: "/dashboard/createTask",
         element: <CreateTask></CreateTask>,
       },
       {
-        path: "alltasks",
+        path: "/dashboard/alltasks",
         element: <AllTasks></AllTasks>,
-        loader: () => fetch('http://localhost:5000/createTask')
+        // loader: () => fetch('http://localhost:5000/createTask')
       },
       {
-        path: "update/:id",
+        path: "/dashboard/update/:id",
         element: <UpdateTask></UpdateTask>,
-        loader: ({params}) => fetch(`http://localhost:5000/createTask/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/createTask/${params._id}`)
       },
       // {
       //   path: "todo",
