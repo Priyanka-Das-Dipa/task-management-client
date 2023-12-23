@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import GoogleLogin from "./GoogleLogin";
 
 const Login = () => {
   const { signIn } = useContext(AuthContext);
@@ -85,6 +86,9 @@ const Login = () => {
                   <Link to="/register"> Please Register</Link>
                 </span>
               </p>
+              <div className="flex text-blue-600 justify-center items-center">
+                <GoogleLogin ></GoogleLogin>
+              </div>
             </form>
           </div>
         </div>

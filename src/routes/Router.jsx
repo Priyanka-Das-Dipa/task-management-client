@@ -8,6 +8,7 @@ import CreateTask from "../Users/CreateTask";
 import AllTasks from "../Users/AllTasks";
 import ToDo from "../Users/ToDo";
 import UpdateTask from "../Users/UpdateTask";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       {
         path: "createTask",

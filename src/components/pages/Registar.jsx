@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
+import GoogleLogin from "./GoogleLogin";
 
 const Registar = () => {
   const {
@@ -130,6 +131,9 @@ const Registar = () => {
                   <Link to="/login">Please Login</Link>
                 </span>
               </p>
+              <div className="flex text-blue-600 justify-center items-center">
+                <GoogleLogin></GoogleLogin>
+              </div>
             </form>
           </div>
         </div>

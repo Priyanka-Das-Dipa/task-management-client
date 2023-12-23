@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaHome, FaTasks } from "react-icons/fa";
+import { FaHome} from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
@@ -43,16 +43,16 @@ const Dashboard = () => {
           </li>
           <li>
             <NavLink to="alltasks" className="flex items-center gap-2 text-xl">
-              <FaTasks />
-              All Task
+            <MdAddTask />
+              To-Do Task
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="todo" className="flex items-center gap-2 text-xl">
               <MdAddTask />
               To-Do Task
             </NavLink>
-          </li>
+          </li> */}
         </ul>
         <div className="divider text-white"></div>
         <ul className="menu p-10">
