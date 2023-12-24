@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/update/:id",
         element: <UpdateTask></UpdateTask>,
-        loader: ({params}) => fetch(`http://localhost:5000/createTask/${params._id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/${params._id}`)
       },
       // {
       //   path: "todo",

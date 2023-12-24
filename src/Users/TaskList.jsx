@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 // {title.toLowerCase()}
-const TaskList = ({ title, _id, tasks, handleDelete }) => {
+const TaskList = ({ title,  tasks, handleDelete }) => {
   return (
     <>
       <Droppable droppableId={title.toLowerCase()} type="task">
@@ -22,11 +22,13 @@ const TaskList = ({ title, _id, tasks, handleDelete }) => {
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
                     ref={provided.innerRef}
-                    className="p-2 mb-2 bg-white rounded-md"
+                    className="p-5 space-y-1 mb-2 bg-white rounded-md"
                   >
                     <p className="font-semibold">{task.title}</p>
                     <p className="text-gray-600">{task.description}</p>
-                    <div className="text-right ml-5">
+                    <p className="text-gray-600">Date: {task.date}</p>
+                    <p className="text-gray-600">Priority Level: {task.select}</p>
+                    <div className="text-right ml-5 flex justify-end gap-5">
                       <Link to={`/dashboard/update/${task._id}`}>
                         <button className="text-2xl">
                           <FaEdit />
@@ -34,7 +36,7 @@ const TaskList = ({ title, _id, tasks, handleDelete }) => {
                       </Link>
                       <button
                         className="text-2xl text-red-500"
-                        onClick={() => handleDelete(_id)}
+                        onClick={() => handleDelete(task._id)}
                       >
                         <MdDelete />
                       </button>

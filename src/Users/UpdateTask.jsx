@@ -1,23 +1,27 @@
+import { useEffect } from "react";
+import { useForm } from "react-hook-form";
 import { useLoaderData } from "react-router-dom";
+import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 
 const UpdateTask = () => {
   const data = useLoaderData();
   const { _id, title, description, date, select } = data;
 
-  const handleUpdate = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const title = form.title.value;
-    const description = form.description.value;
-    const date = form.date.value;
-    const select = form.select.value;
+  const { register, handleSubmit, setValue } = useForm();
 
-    const updateTask = { title, description, date, select };
+  useEffect(() => {
+    setValue("title", title);
+    setValue("description", description);
+    setValue("date", date);
+    setValue("select", select);
+  }, [title, description, date, select, setValue]);
+
+  const handleUpdate = (data) => {
+    const updateTask = { ...data };
     console.log(updateTask);
 
-    // sent to the database
-
+    // Send to the database
     fetch(`http://localhost:5000/createTask/${_id}`, {
       method: "PUT",
       headers: {
@@ -34,6 +38,10 @@ const UpdateTask = () => {
           icon: "success",
           confirmButtonText: "Cool",
         });
+      })
+      .catch((error) => {
+        console.error("Error updating task:", error);
+        toast.error("Error updating task. Please try again.");
       });
   };
 
@@ -42,71 +50,89 @@ const UpdateTask = () => {
       <div className="hero">
         <div className="hero-content flex-col">
           <div className="text-center lg:text-left py-5 ">
-            <h1 className="text-5xl font-bold">Create A Task!</h1>
+            <h1 className="text-5xl font-bold">Update Task!</h1>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form onSubmit={handleUpdate} className="card-body">
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Title</span>
+            <form
+              onSubmit={handleSubmit(handleUpdate)}
+              className="max-w-md mx-auto my-8"
+            >
+              <div className="mb-4">
+                <label
+                  htmlFor="title"
+                  className="block text-sm font-semibold text-gray-600"
+                >
+                  Title
                 </label>
                 <input
-                  defaultValue={title}
                   type="text"
+                  id="title"
                   name="title"
-                  placeholder="title"
-                  className="input input-bordered"
-                  required
+                  defaultValue={title}
+                  {...register("title", { required: true })}
+                  className="w-full p-2 border rounded-md"
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Description</span>
+
+              <div className="mb-4">
+                <label
+                  htmlFor="description"
+                  className="block text-sm font-semibold text-gray-600"
+                >
+                  Description
                 </label>
-                <input
+                <textarea
+                  id="description"
                   defaultValue={description}
-                  type="text"
                   name="description"
-                  placeholder="description"
-                  className="input input-bordered"
-                  required
+                  {...register("description")}
+                  className="w-full p-2 border rounded-md"
                 />
               </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Date</span>
+
+              <div className="mb-4">
+                <label
+                  htmlFor="deadline"
+                  className="block text-sm font-semibold text-gray-600"
+                >
+                  Deadline
                 </label>
                 <input
-                  defaultValue={date}
                   type="date"
+                  defaultValue={date}
+                  id="deadline"
                   name="date"
-                  className="input input-bordered"
-                  required
+                  {...register("date")}
+                  className="w-full p-2 border rounded-md"
                 />
               </div>
-              <div>
-                <label className="label">
-                  <span className="label-text">Priority</span>
+
+              <div className="mb-4">
+                <label
+                  htmlFor="priority"
+                  className="block text-sm font-semibold text-gray-600"
+                >
+                  Priority
                 </label>
                 <select
+                  id="priority"
                   defaultValue={select}
                   name="select"
-                  className="select select-bordered w-full max-w-xs"
+                  {...register("select")}
+                  className="w-full p-2 border rounded-md"
                 >
-                  <option disabled selected>
-                    High
-                  </option>
-                  <option>Low</option>
-                  <option>Moderate</option>
+                  <option value="low">Low</option>
+                  <option value="moderate">Moderate</option>
+                  <option value="high">High</option>
                 </select>
               </div>
-              <div className="form-control mt-6">
-                <input
-                  type="submit"
-                  className="btn btn-primary"
-                  value="Update Task"
-                />
-              </div>
+
+              <button
+                type="submit"
+                className="bg-blue-500 text-white p-2 rounded-md"
+              >
+                Update Task
+              </button>
             </form>
           </div>
         </div>

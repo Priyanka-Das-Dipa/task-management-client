@@ -74,8 +74,8 @@ const CreateTask = () => {
           <input
             type="date"
             id="deadline"
-            name="deadline"
-            {...register("deadline")}
+            name="date"
+            {...register("date")}
             className="w-full p-2 border rounded-md"
           />
         </div>
@@ -89,8 +89,8 @@ const CreateTask = () => {
           </label>
           <select
             id="priority"
-            name="priority"
-            {...register("priority")}
+            name="select"
+            {...register("select")}
             className="w-full p-2 border rounded-md"
           >
             <option value="low">Low</option>
