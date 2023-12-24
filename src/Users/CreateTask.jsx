@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 const CreateTask = () => {
   const { register, handleSubmit } = useForm();
@@ -16,7 +16,12 @@ const CreateTask = () => {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        toast.success("Task Added Successfully");
+        // toast("Task Added Successfully");
+        Swal.fire({
+          title: "Success!",
+          text: "Your Task is added.",
+          icon: "success",
+        });
       });
   };
   return (
