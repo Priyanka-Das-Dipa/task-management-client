@@ -1,16 +1,25 @@
 import about from "../../../../assets/images/about.jpeg";
 const About = () => {
-
   return (
     <>
       <div id="about mb-10">
         <h2 className="text-4xl font-bold text-center">ABOUT US</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-center">
-          <div className="w-[550px]">
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+            className="w-[550px]"
+          >
             <img src={about} alt="" />
           </div>
-          <div className="space-y-4 px-5">
+          <div
+            data-aos="fade-down"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+            className="space-y-4 px-5"
+          >
             <h2 className="text-4xl font-bold">
               We Provide Best Services <br />
               <span className="text-blue-500">To Access Our Dashboard</span>
@@ -18,7 +27,6 @@ const About = () => {
             <p className="">
               Welcome to
               <span className="text-blue-500 font-bold">
-               
                 Task Management System
               </span>
               where efficiency meets simplicity. Our mission is to empower

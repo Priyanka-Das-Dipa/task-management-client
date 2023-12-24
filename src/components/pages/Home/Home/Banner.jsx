@@ -8,7 +8,12 @@ const Banner = () => {
   return (
     <section className=" mb-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 items-center ">
-        <div className="text-left px-10 space-y-3">
+        <div
+          data-aos="fade-up"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+          className="text-left px-10 space-y-3"
+        >
           <h1 className="text-2xl font-bold">Task Management</h1>
           <p className="text-lg font-medium">
             Task management involves organizing and prioritizing activities to
@@ -32,7 +37,9 @@ const Banner = () => {
             </>
           )}
         </div>
-        <div>
+        <div data-aos="fade-up"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000">
           <img src={banner} alt="" className="mb-10" />
         </div>
       </div>
