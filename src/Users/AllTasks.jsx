@@ -32,25 +32,6 @@ const AllTasks = () => {
     const taskId = result.draggableId;
     const destinationListId = result.destination.droppableId;
 
-    // Assuming you have an endpoint for updating task status using fetch
-    // fetch('YOUR_SERVER_UPDATE_STATUS_ENDPOINT', {
-    //   method: 'PUT',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     id: taskId,
-    //     status: destinationListId,
-    //   }),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error updating task status:', error);
-    //   });
-
     const updatedTasks = tasks.map((task) => {
       if (task._id === taskId) {
         return { ...task, status: destinationListId };
@@ -90,7 +71,8 @@ const AllTasks = () => {
       }
     });
   };
-
+  // onDragEnd={onDragEnd}
+  // () => {console.log("drag and drop event occurred");}onDragEnd={onDragEnd}
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="grid grid-cols-3 mt-8 gap-10">
@@ -111,7 +93,6 @@ const AllTasks = () => {
         />
       </div>
     </DragDropContext>
-    
   );
 };
 

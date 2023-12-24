@@ -3,7 +3,7 @@ import { Draggable, Droppable } from "react-beautiful-dnd";
 import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
-
+// {title.toLowerCase()}
 const TaskList = ({ title, _id, tasks, handleDelete }) => {
   return (
     <>
