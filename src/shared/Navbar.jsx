@@ -25,9 +25,10 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/about">
+        <a href="#about">About</a>
+        {/* <Link to="#about">
           About
-        </Link>
+        </Link> */}
       </li>
       <li>
         <Link to="/dashboard/alltasks">
