@@ -6,7 +6,7 @@ const CreateTask = () => {
   const handleFormSubmit = (data) => {
     const newTask = { ...data, status: "todo" };
 
-    fetch("http://localhost:5000/createTask", {
+    fetch("https://task-management-server-teal-theta.vercel.app/createTask", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

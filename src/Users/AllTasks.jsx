@@ -13,7 +13,7 @@ const AllTasks = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/createTask");
+        const response = await fetch("https://task-management-server-teal-theta.vercel.app/createTask");
         const data = await response.json();
         setTasks(data);
       } catch (error) {
@@ -53,7 +53,7 @@ const AllTasks = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/createTask/${_id}`, {
+        fetch(`https://task-management-server-teal-theta.vercel.app/createTask/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

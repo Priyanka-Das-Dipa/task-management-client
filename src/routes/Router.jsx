@@ -40,12 +40,12 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/alltasks",
         element: <AllTasks></AllTasks>,
-        // loader: () => fetch('http://localhost:5000/createTask')
+        // loader: () => fetch('https://task-management-server-teal-theta.vercel.app/createTask')
       },
       {
         path: "/dashboard/update/:id",
         element: <UpdateTask></UpdateTask>,
-        loader: ({params}) => fetch(`http://localhost:5000/${params._id}`)
+        loader: ({params}) => fetch(`https://task-management-server-teal-theta.vercel.app/${params._id}`)
       },
       // {
       //   path: "todo",

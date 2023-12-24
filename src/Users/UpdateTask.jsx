@@ -22,7 +22,7 @@ const UpdateTask = () => {
     console.log(updateTask);
 
     // Send to the database
-    fetch(`http://localhost:5000/createTask/${_id}`, {
+    fetch(`https://task-management-server-teal-theta.vercel.app/createTask/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
